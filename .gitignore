@@ -1,0 +1,17 @@
+# Files Git should ignore, i.e. never upload to GitHub.
+
+# The virtual environment: about 4-5 GB, and specific to one computer.
+.venv/
+
+# Python's automatic cache of compiled code.
+__pycache__/
+*.pyc
+
+# Downloaded datasets and processed training data (several GB).
+data/
+
+# Saved model checkpoints (hundreds of MB each; too big for GitHub).
+checkpoints/
+
+# Logs and reports produced by runs on your PC.
+logs/

@@ -1,0 +1,25 @@
+# PyTorch for Windows + AMD ROCm 10.1, built by AMD for "gfx1101" chips
+# (Radeon RX 7800 XT, RX 7700 XT, RX 7700).
+#
+# Install it with (from the project folder):
+#   .venv\Scripts\python -m pip install -r requirements-rocm-windows.txt
+#
+# Where this comes from: AMD's official instructions, checked 31 Oct 2026:
+#   https://rocm.docs.amd.com/projects/ai-ecosystem/en/latest/frameworks/pytorch/install.html
+# What AMD lists for ROCm 10.1 on Windows: Windows 11 (25H2), the driver
+# "AMD Software: Adrenalin Edition 26.10.41.05", and Python 3.11 to 3.14.
+#
+# What the two lines below mean:
+#   --index-url ...  Download from AMD's package server instead of the usual
+#                    Python package index (PyPI). The PyTorch on PyPI can't
+#                    use AMD graphics cards on Windows.
+#   torch[...]==...  PyTorch version 2.14.0, built for ROCm 10.1. The
+#                    "[device-gfx1101]" part adds the GPU code compiled
+#                    specifically for your card's chip family.
+#
+# About 1.6 GB to download, about 4.3 GB on disk once installed.
+#
+# AMD's page also installs torchvision and torchaudio (tools for pictures and
+# sound). A text chatbot doesn't need them, so we leave them out.
+--index-url https://stable.repo.amd.com/rocm/whl-next/
+torch[device-gfx1101]==2.14.0+rocm10.1.0

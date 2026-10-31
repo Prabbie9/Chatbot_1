@@ -1,0 +1,16 @@
+# Extra Python packages for ChatGDP, from the normal Python package index (PyPI).
+#
+# Install them with (from the project folder):
+#   .venv\Scripts\python -m pip install -r requirements.txt
+#
+# PyTorch is deliberately NOT listed here. It comes from AMD's own server
+# instead (see requirements-rocm-windows.txt), because the PyTorch on PyPI
+# can't use AMD graphics cards on Windows. We keep the two installs separate
+# so pip never mixes up packages from the two servers.
+#
+# We'll add packages here stage by stage, each with a note saying what it's for.
+
+# numpy: fast grids of numbers. PyTorch uses it to swap data with other tools,
+# and prints a "Failed to initialize NumPy" warning if it's missing. Later
+# we'll also use it to store our tokenized training data compactly on disk.
+numpy
